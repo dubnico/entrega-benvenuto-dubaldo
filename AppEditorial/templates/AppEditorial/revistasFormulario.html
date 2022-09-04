@@ -1,0 +1,28 @@
+{% extends "AppEditorial/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class="mb-5"> BIENVENIDOS AL SISTEMA DE LIBRERÍA NN</h1>
+
+{% endblock %}
+
+
+{% block contenido_que_cambia %} 
+
+<h1>FORMULARIO PARA CARGAR REVISTAS</h1>
+<form action="{% url 'revistasFormulario' %}" method="POST"> {% csrf_token %}
+
+<table>
+
+    {{ formulario.as_table }}
+
+
+</table>
+
+<input type="submit", value="Enviar">
+
+</form>
+
+{% endblock %}

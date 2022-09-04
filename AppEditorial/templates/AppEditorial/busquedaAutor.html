@@ -1,0 +1,28 @@
+{% extends "AppEditorial/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class="mb-5"> BIENVENIDOS AL SISTEMA DE LIBRERÍA NN</h1>
+
+{% endblock %}
+
+
+{% block contenido_que_cambia %} 
+
+<h1>BÚSQUEDA DE LIBROS POR AUTOR</h1>
+
+
+
+<form action="{% url 'resultado_busqueda' %}" method="GET"> {% csrf_token %}
+
+<p><b>AUTOR: </b><input type="text" name="autor" id="autor"></p>
+
+<input type="submit", value="Buscar">
+
+</form>
+
+<h2>{{ mensaje }}</h2>
+
+{% endblock %}

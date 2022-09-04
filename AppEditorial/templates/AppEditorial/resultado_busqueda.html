@@ -1,0 +1,31 @@
+{% extends "AppEditorial/padre.html" %}
+
+{% load static %}
+
+{% block titulo_de_pagina %}
+
+<h1 class="mb-5"> BIENVENIDOS AL SISTEMA DE LIBRERÍA NN</h1>
+
+{% endblock %}
+
+
+{% block contenido_que_cambia %} 
+
+<h1>Resultado de Búsqueda por Autor</h1>
+
+{% if mensaje %}
+<h3>{{ mensaje }}</h3>
+
+{% else %}
+
+{% for autor in autor %}
+
+<h2>{{ autor.titulo }}</h2>
+
+--
+
+{% endfor %}
+
+{% endif%}
+
+{% endblock %}
